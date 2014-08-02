@@ -24,7 +24,11 @@ std::vector<std::vector<Line> > stationLines;
 static int MaxInt = std::numeric_limits<int>::max();
 std::vector<int> cache;
 
-int findPath(int currentStation, int currentTime)
+static const int NotProcessed = -1;
+static const int ProcessingInProgress = -2;
+static const int NoPath = - 3;
+
+int findMinWaitingPath(int currentStation, int currentTime)
 {
     int returnValue = MaxInt;
 
@@ -34,31 +38,27 @@ int findPath(int currentStation, int currentTime)
     }
     else if (stationLines[currentStation].size() == 0)
     {
-        returnValue = -1;
+        returnValue = NoPath;
     }
-    else for (unsigned int i = 0; i < stationLines[currentStation].size(); ++i)
+    else for (unsigned int i = 0; i < stationLines[currentStation].size() && returnValue != 0; ++i)
     {
         Line& line = stationLines[currentStation][i];
-        if (line.E <= T && line.S >= currentTime)
-        {
-            int cachedWait = cache[line.index];
+        int lineWaitTime = line.S - currentTime;
+        int cachedWaitTime = cache[line.index];
 
-            if (cachedWait == -2)
+        if (cachedWaitTime >= NotProcessed && line.E <= T && line.S >= currentTime && returnValue > lineWaitTime)
+        {
+            if (cachedWaitTime != NotProcessed)
             {
-                // do nothing
-            }
-            else if (cachedWait != -1)
-            {
-                returnValue = std::min(std::max(cachedWait, line.S - currentTime), returnValue);
+                returnValue = std::min(std::max(cachedWaitTime, lineWaitTime), returnValue);
             }
             else
             {
-                cache[line.index] = -2;
-                int maxLineDelay = findPath(line.V, line.E);
-                if (maxLineDelay != -1)
+                cache[line.index] = ProcessingInProgress;
+                cache[line.index] = findMinWaitingPath(line.V, line.E);
+                if (cache[line.index] != NoPath)
                 {
-                    cache[line.index] = maxLineDelay;
-                    returnValue = std::min(std::max(maxLineDelay, line.S - currentTime), returnValue);
+                    returnValue = std::min(std::max(cache[line.index], lineWaitTime), returnValue);
                 }
             }
         }
@@ -81,39 +81,13 @@ int main()
         scanf("%d", &U);
         stationLines[U].push_back(Line());
         stationLines[U].back().index = i;
-        cache[i] = -1;
+        cache[i] = NotProcessed;
         scanf("%d", &stationLines[U].back().V);
         scanf("%d", &stationLines[U].back().S);
         scanf("%d", &stationLines[U].back().E);
     }
 
-    int maxWait = findPath(1, 0);
-    printf("%d\n", maxWait != MaxInt ? maxWait : -1);
-
-    return 0;
-}
-
-int main1()
-{
-    N = 4;
-    T = 12;
-    M = 5;
-    stationLines.resize(N + 1);
-    cache.resize(M);
-
-    int lines[5][4] = {{1, 2, 0, 1}, {2, 1, 2, 3}, {1, 3, 3, 4}, {3, 2, 4, 5}, {2, 4, 7, 8}};
-    for (int i = 0; i < M; ++i)
-    {
-        int U = lines[i][0];
-        stationLines[U].push_back(Line());
-        stationLines[U].back().index = i;
-        cache[i] = -1;
-        stationLines[U].back().V = lines[i][1];
-        stationLines[U].back().S = lines[i][2];
-        stationLines[U].back().E = lines[i][3];
-    }
-
-    int maxWait = findPath(1, 0);
+    int maxWait = findMinWaitingPath(1, 0);
     printf("%d\n", maxWait != MaxInt ? maxWait : -1);
 
     return 0;
