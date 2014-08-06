@@ -24,9 +24,9 @@ std::vector<std::vector<Line> > stationLines;
 static int MaxInt = std::numeric_limits<int>::max();
 std::vector<int> cache;
 
-static const int NotProcessed = -1;
+static const int NotProcessed = -3;
 static const int ProcessingInProgress = -2;
-static const int NoPath = - 3;
+static const int NoPath = -1;
 
 int findMinWaitingPath(int currentStation, int currentTime)
 {
@@ -46,7 +46,7 @@ int findMinWaitingPath(int currentStation, int currentTime)
         int lineWaitTime = line.S - currentTime;
         int cachedWaitTime = cache[line.index];
 
-        if (cachedWaitTime >= NotProcessed && line.E <= T && line.S >= currentTime && returnValue > lineWaitTime)
+        if (cachedWaitTime != ProcessingInProgress && line.E <= T && line.S >= currentTime && returnValue > lineWaitTime)
         {
             if (cachedWaitTime != NotProcessed)
             {
