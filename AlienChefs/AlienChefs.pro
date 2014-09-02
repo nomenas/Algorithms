@@ -1,10 +1,11 @@
 TEMPLATE = app
-CONFIG += console cx11
+CONFIG += console
 CONFIG -= app_bundle
 CONFIG -= qt
+DEFINES += MY_DATA
 
 SOURCES += main.cpp
 
 OTHER_FILES += \
-    input.dat
+    test.dat
 
