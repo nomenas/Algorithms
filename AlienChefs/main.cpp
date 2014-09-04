@@ -142,52 +142,68 @@ int execQuery(std::vector<int>& query)
             {
                 // process right tree
                 RangeTreeNode* node = rootNode->m_right;
-                while (node)
+                RangeTreeNode* previousNode = 0;
+                if (node == 0 && Recipes[0][rootNode->m_index] <= query[i])
                 {
-                    if (Recipes[0][node->m_index] == query[i] && node != rootNode->m_right)
+                    returnValue += countEndLaterThan(rootNode, query[i]);
+                }
+                else while (node || previousNode)
+                {
+                    if (node == 0 && previousNode && Recipes[0][previousNode->m_index] <= query[i])
                     {
-                        returnValue += countEndLaterThan(node, query[i]);
-                        node = 0;
+                        returnValue += countEndLaterThan(previousNode, query[i]);
+                        previousNode = 0;
                     }
-                    else if (node->m_left == 0 && Recipes[0][node->m_index] <= query[i])
+                    else if (node == 0)
                     {
-                        returnValue += countEndLaterThan(node, query[i]);
-                        node = 0;
-                    }
-                    else if (Recipes[0][node->m_index] < query[i])
-                    {
-                        returnValue += countEndLaterThan(node->m_left, query[i]);
-                        node = node->m_right;
+                        previousNode = 0;
                     }
                     else
                     {
-                        node = node->m_left;
+                        previousNode = node;
+                        if (Recipes[0][node->m_index] <= query[i])
+                        {
+                            returnValue += countEndLaterThan(node->m_left, query[i]);
+                            node = node->m_right;
+                        }
+                        else
+                        {
+                            node = node->m_left;
+                        }
                     }
                 }
-
 
                 // process left tree
                 node = rootNode->m_left;
-                while (node)
+                previousNode = 0;
+                while (node || previousNode)
                 {
-                    if (Recipes[0][node->m_index] < previousValue)
+                    if (node == 0 && previousNode && Recipes[0][previousNode->m_index] >= previousValue)
                     {
-                        node = node->m_right;
+                        returnValue += countEndLaterThan(previousNode, query[i]);
+                        previousNode = 0;
                     }
-                    else if (node->m_right == 0 && Recipes[0][node->m_index] >= previousValue)
+                    else if (node == 0)
                     {
-                        returnValue += countEndLaterThan(node, query[i]);
-                        node = 0;
+                        previousNode = 0;
                     }
                     else
                     {
-                        returnValue += countEndLaterThan(node->m_right, query[i]);
-                        node = node->m_left;
+                        previousNode = node;
+                        if (Recipes[0][node->m_index] >= previousValue)
+                        {
+                            returnValue += countEndLaterThan(node->m_right, query[i]);
+                            node = node->m_left;
+                        }
+                        else
+                        {
+                            node = node->m_right;
+                        }
                     }
                 }
-
-                previousValue = query[i] + 1;
             }
+
+            previousValue = query[i] + 1;
         }
 
     }
