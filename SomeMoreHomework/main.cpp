@@ -89,14 +89,14 @@ bool isPatternPossible(unsigned int currentPos, int index, unsigned char* input)
                       memcmp(&input[compareInputFrom], &AllowedSequences[2][comparePaternFrom], compareLenght) == 0 ||
                       memcmp(&input[compareInputFrom], &AllowedSequences[3][comparePaternFrom], compareLenght) == 0;
 
-//        if (returnValue && index > 4 && relativeIndex == 0)
-//        {
-//            int compareLenght = std::min(index, 8);
-//            int compareInputFrom = index - compareLenght;
-//            int comparePaternFrom = 8 - compareLenght;
-//            returnValue = (memcmp(&input[compareInputFrom],
-//                &AllowedSequences[input[index] == 1 ? 2 : 0][comparePaternFrom], compareLenght) != 0);
-//        }
+        if (returnValue && index > 5 && relativeIndex == 0)
+        {
+            int compareLenght = std::min(index, 8);
+            int compareInputFrom = index - compareLenght;
+            int comparePaternFrom = 8 - compareLenght;
+            returnValue = (memcmp(&input[compareInputFrom],
+                &AllowedSequences[input[index] == 1 ? 2 : 0][comparePaternFrom], compareLenght) != 0);
+        }
     }
     else if (index > 1 &&
             (memcmp(&input[index - 2], NotPossible[0], 3) == 0 || memcmp(&input[index - 2], NotPossible[1], 3) == 0))
