@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MaxPalindrome/main.cpp"
-            timestampString = "476148345.866964"
+            timestampString = "476492076.52114"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "maxPalindrome(int start, int end, int* array, int lenght)"
             landmarkType = "7">
          </BreakpointContent>
