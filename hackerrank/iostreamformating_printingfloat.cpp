@@ -7,12 +7,8 @@
 using namespace std;
 
 
-int main2()
+int iostreamformationg_printfloat()
 {
-#ifdef FILEINPUT
-    freopen("input.dat","r",stdin);
-#endif
-
     int n;
     cin >> n;
     float negativeCount = 0;

@@ -7,9 +7,19 @@ SOURCES += \
     inputfromfile.cpp \
     iostreamformating_piramide.cpp \
     iostreamformating_printingfloat.cpp \
-    timeconversion.cpp
+    timeconversion.cpp \
+    angryprofessor.cpp \
+    sherlockandthebeast.cpp \
+    lisasworkbook.cpp \
+    binarysearch.cpp \
+    .main.cpp \
+    dijkstra.cpp
 
 DEFINES += FILEINPUT
 
 DISTFILES += \
     input.dat
+
+HEADERS += \
+    stdheap.h \
+    heap.h

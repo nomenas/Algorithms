@@ -1,14 +1,11 @@
+// https://www.hackerrank.com/challenges/time-conversion
 #include <iomanip>
 #include <iostream>
 #include <string.h>
 using namespace std;
 
-int main()
+int timeConversion()
 {
-#ifdef FILEINPUT
-    freopen("input.dat","r",stdin);
-#endif
-
     string time;
     cin >> time;
 

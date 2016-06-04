@@ -6,12 +6,8 @@
 #include <limits.h>
 #include <stdbool.h>
 
-int main1(){
-
-#ifdef FILEINPUT
-    freopen("input.dat","r",stdin);
-#endif
-
+int inputfromfile()
+{
     int n;
     scanf("%d",&n);
     long long int sum = 0;

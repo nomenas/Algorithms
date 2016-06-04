@@ -7,12 +7,8 @@
 using namespace std;
 
 
-int main3()
+int iostreamformating_piramide()
 {
-#ifdef FILEINPUT
-    freopen("input.dat","r",stdin);
-#endif
-
     int n;
     cin >> n;
 
