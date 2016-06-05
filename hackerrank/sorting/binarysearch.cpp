@@ -7,8 +7,12 @@
 #include <algorithm>
 using namespace std;
 
-int binarySearch()
+int main()
 {
+#ifdef FILEINPUT
+    freopen("binarysearch.dat","r",stdin);
+#endif
+
     int V = 0;
     int n = 0;
     cin >> V >> n;

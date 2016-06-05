@@ -6,8 +6,11 @@
 #include <algorithm>
 using namespace std;
 
-int sherlockandthebeast()
+int main()
 {
+#ifdef FILEINPUT
+    freopen("sherlockandthebeast.dat","r",stdin);
+#endif
     int t;
     cin >> t;
     for(int a0 = 0; a0 < t; a0++)

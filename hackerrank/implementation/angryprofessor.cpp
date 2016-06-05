@@ -7,11 +7,14 @@
 #include <algorithm>
 using namespace std;
 
-int angryprofessor()
+int main()
 {
+#ifdef FILEINPUT
+    freopen("angryprofessor.dat","r",stdin);
+#endif
+
     int t;
     cin >> t;
-
 
     for(int a0 = 0; a0 < t; a0++)
     {

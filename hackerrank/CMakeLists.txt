@@ -1,0 +1,18 @@
+project(HackerRank)
+cmake_minimum_required(VERSION 3.1)
+
+add_definitions(-DFILEINPUT)
+
+set (CMAKE_CXX_STANDARD 11)
+
+add_executable(Piramide formating/piramide.cpp formating/piramide.dat)
+add_executable(PrintFloat formating/printingfloat.cpp formating/printingfloat.dat)
+
+add_executable(SherlockAndTheBeast implementation/sherlockandthebeast.cpp implementation/sherlockandthebeast.dat)
+add_executable(AngryProfessor implementation/angryprofessor.cpp implementation/angryprofessor.dat)
+add_executable(TimeConversion implementation/timeconversion.cpp implementation/timeconversion.dat)
+add_executable(LisaWorkbook implementation/lisasworkbook.cpp implementation/lisasworkbook.dat)
+
+add_executable(BinarySearch sorting/binarysearch.cpp sorting/binarysearch.dat)
+
+add_executable(ShortestReach graphs/shortestreach.cpp graphs/shortestreach.dat utils/heap.h)

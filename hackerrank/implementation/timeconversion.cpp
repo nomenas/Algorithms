@@ -4,8 +4,11 @@
 #include <string.h>
 using namespace std;
 
-int timeConversion()
+int main()
 {
+#ifdef FILEINPUT
+    freopen("timeconversion.dat","r",stdin);
+#endif
     string time;
     cin >> time;
 

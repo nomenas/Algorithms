@@ -5,19 +5,12 @@
 #include <algorithm>
 #include <functional>
 
-template <class T, class Comp = std::function<bool(T, T)> >
+template <class T, class Comparator = std::greater<int> >
 class Heap
 {
 public:
-    Heap() : m_comparator(Comp())
-    {
-
-    }
-
-    Heap(Comp comp) : m_comparator(comp)
-    {
-
-    }
+    Heap() : m_comparator(Comparator()) {}
+    Heap(Comparator comp) : m_comparator(comp) {}
 
     void push(T value)
     {
@@ -99,7 +92,7 @@ private:
     }
 
     std::vector<T> m_heap;
-    Comp m_comparator;
+    Comparator m_comparator;
 };
 
 template <class T>

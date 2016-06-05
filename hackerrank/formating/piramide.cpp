@@ -6,9 +6,12 @@
 #include <iomanip>
 using namespace std;
 
-
-int iostreamformating_piramide()
+int main()
 {
+#ifdef FILEINPUT
+    freopen("piramide.dat","r",stdin);
+#endif
+
     int n;
     cin >> n;
 

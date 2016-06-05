@@ -7,8 +7,12 @@
 #include <algorithm>
 using namespace std;
 
-int lisaworkbook()
+int main()
 {
+#ifdef FILEINPUT
+    freopen("lisasworkbook.dat","r",stdin);
+#endif
+
     int n = 0;
     int k = 0;
     std::cin >> n >> k;
