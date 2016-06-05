@@ -16,3 +16,5 @@ add_executable(LisaWorkbook implementation/lisasworkbook.cpp implementation/lisa
 add_executable(BinarySearch sorting/binarysearch.cpp sorting/binarysearch.dat)
 
 add_executable(ShortestReach graphs/shortestreach.cpp graphs/shortestreach.dat utils/heap.h)
+
+add_executable(FibornacciModified dynamicprogramming/fibonaccimodified.cpp dynamicprogramming/fibonaccimodified.dat utils/ostream.h utils/xlong.h)
