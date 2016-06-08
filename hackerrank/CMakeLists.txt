@@ -22,4 +22,6 @@ add_executable(TheMaximumSubarray dynamicprogramming/themaximumsubarray.cpp dyna
 add_executable(Candies dynamicprogramming/candies.cpp dynamicprogramming/candies.dat)
 add_executable(CandiesWithReorder dynamicprogramming/candieswithreorder.cpp dynamicprogramming/candies.dat)
 
+add_executable(2DArrayDS datastructures/arrays/2DArrayDS.cpp datastructures/arrays/2DArrayDS.dat)
+add_executable(SparseArrays datastructures/arrays/sparsearrays.cpp datastructures/arrays/sparsearrays.dat)
 add_executable(BalancedParentheses datastructures/stacks/balancedarentheses.cpp datastructures/stacks/balancedarentheses.dat)
