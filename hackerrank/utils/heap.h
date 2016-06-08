@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <functional>
 
-template <class T, class Comparator = std::greater<int> >
+template <class T, class Comparator = std::greater<T> >
 class Heap
 {
 public:

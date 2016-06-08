@@ -18,3 +18,8 @@ add_executable(BinarySearch sorting/binarysearch.cpp sorting/binarysearch.dat)
 add_executable(ShortestReach graphs/shortestreach.cpp graphs/shortestreach.dat utils/heap.h)
 
 add_executable(FibornacciModified dynamicprogramming/fibonaccimodified.cpp dynamicprogramming/fibonaccimodified.dat utils/ostream.h utils/xlong.h)
+add_executable(TheMaximumSubarray dynamicprogramming/themaximumsubarray.cpp dynamicprogramming/themaximumsubarray.dat)
+add_executable(Candies dynamicprogramming/candies.cpp dynamicprogramming/candies.dat)
+add_executable(CandiesWithReorder dynamicprogramming/candieswithreorder.cpp dynamicprogramming/candies.dat)
+
+add_executable(BalancedParentheses datastructures/stacks/balancedarentheses.cpp datastructures/stacks/balancedarentheses.dat)
