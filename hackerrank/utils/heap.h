@@ -100,4 +100,43 @@ using MinHeap = Heap<T, std::less<T> >;
 template <class T>
 using MaxHeap = Heap<T, std::greater<T> >;
 
+template <class T, class Comparator>
+void heapify(size_t index, std::vector<T>& heap, const Comparator& comparator)
+{
+    size_t parentIndex = index ? ((index - 1) / 2) : 0;
+    bool wasHeapifiedUp = index != parentIndex && comparator(heap[parentIndex], heap[index]);
+    while (index != parentIndex && comparator(heap[parentIndex], heap[index]))
+    {
+        std::swap(heap[index], heap[parentIndex]);
+        index = parentIndex;
+        parentIndex = index ? ((index - 1) / 2) : 0;
+    }
+
+    if (!wasHeapifiedUp)
+    {
+        while (2 * index + 1 < heap.size())
+        {
+            size_t left = 2 * index + 1;
+            size_t right = left + 1;
+
+            size_t largerChild = left;
+            if (right < heap.size() && comparator(heap[left], heap[right]))
+            {
+                largerChild = right;
+            }
+
+            if (comparator(heap[index], heap[largerChild]))
+            {
+                std::swap(heap[index], heap[largerChild]);
+                index = largerChild;
+            }
+            else
+            {
+                index = heap.size();
+            }
+        }
+    }
+}
+
+
 #endif //HEAP_H
