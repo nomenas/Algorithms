@@ -33,7 +33,9 @@ add_executable(CandiesWithReorder dynamicprogramming/candieswithreorder.cpp dyna
 
 add_executable(2DArrayDS datastructures/arrays/2DArrayDS.cpp datastructures/arrays/2DArrayDS.dat)
 add_executable(SparseArrays datastructures/arrays/sparsearrays.cpp datastructures/arrays/sparsearrays.dat)
+add_executable (DynamicArray datastructures/arrays/dynamicarray.cpp datastructures/arrays/dynamicarray.dat)
 add_executable(BalancedParentheses datastructures/stacks/balancedarentheses.cpp datastructures/stacks/balancedarentheses.dat)
 add_executable(Heap datastructures/heap/heap.cpp)
+add_executable(Contacts datastructures/tries/contacts.cpp datastructures/tries/contacts.dat)
 
 add_executable(SherlockAndArray search/sherlockandarray.cpp search/sherlockandarray.dat)
