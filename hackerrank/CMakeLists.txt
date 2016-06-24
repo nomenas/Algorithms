@@ -37,5 +37,6 @@ add_executable (DynamicArray datastructures/arrays/dynamicarray.cpp datastructur
 add_executable(BalancedParentheses datastructures/stacks/balancedarentheses.cpp datastructures/stacks/balancedarentheses.dat)
 add_executable(Heap datastructures/heap/heap.cpp)
 add_executable(Contacts datastructures/tries/contacts.cpp datastructures/tries/contacts.dat)
+add_executable(MergingComunities datastructures/disjointset/mergingcommunities.cpp datastructures/disjointset/mergingcommunities.dat)
 
 add_executable(SherlockAndArray search/sherlockandarray.cpp search/sherlockandarray.dat)
