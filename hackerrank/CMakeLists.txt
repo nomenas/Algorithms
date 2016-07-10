@@ -30,6 +30,7 @@ add_executable(FibornacciModified dynamicprogramming/fibonaccimodified.cpp dynam
 add_executable(TheMaximumSubarray dynamicprogramming/themaximumsubarray.cpp dynamicprogramming/themaximumsubarray.dat)
 add_executable(Candies dynamicprogramming/candies.cpp dynamicprogramming/candies.dat)
 add_executable(CandiesWithReorder dynamicprogramming/candieswithreorder.cpp dynamicprogramming/candies.dat)
+add_executable(TheCoinChangeProblem dynamicprogramming/thecoinchangeproblem.cpp dynamicprogramming/thecoinchangeproblem.dat)
 
 add_executable(2DArrayDS datastructures/arrays/2DArrayDS.cpp datastructures/arrays/2DArrayDS.dat)
 add_executable(SparseArrays datastructures/arrays/sparsearrays.cpp datastructures/arrays/sparsearrays.dat)
@@ -39,5 +40,6 @@ add_executable(Heap datastructures/heap/heap.cpp)
 add_executable(Contacts datastructures/tries/contacts.cpp datastructures/tries/contacts.dat)
 add_executable(SwapNodes datastructures/tries/swapnodes.cpp datastructures/tries/swapnodes.dat)
 add_executable(MergingComunities datastructures/disjointset/mergingcommunities.cpp datastructures/disjointset/mergingcommunities.dat)
+add_executable(ComponentsInGraph datastructures/disjointset/componentsinagraph.cpp datastructures/disjointset/componentsinagraph.dat)
 
 add_executable(SherlockAndArray search/sherlockandarray.cpp search/sherlockandarray.dat)
