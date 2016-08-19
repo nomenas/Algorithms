@@ -21,6 +21,8 @@ add_executable(ChocolateFeast implementation/chocolatefeast.cpp implementation/c
 add_executable(TheGridSearch implementation/thegridsearch.cpp implementation/thegridsearch.dat)
 add_executable(CavityMap implementation/cavitymap.cpp implementation/cavitymap.dat)
 add_executable(CaesarCipher implementation/caesarcipher.cpp implementation/caesarcipher.dat)
+add_executable(NonDivisibleSubset implementation/nondivisiblesubset.cpp implementation/nondivisiblesubset.dat)
+add_executable(JumpingOnTheClouds implementation/jumpingontheclouds.cpp implementation/jumpingontheclouds.dat)
 
 add_executable(BinarySearch sorting/binarysearch.cpp sorting/binarysearch.dat)
 
@@ -31,6 +33,8 @@ add_executable(TheMaximumSubarray dynamicprogramming/themaximumsubarray.cpp dyna
 add_executable(Candies dynamicprogramming/candies.cpp dynamicprogramming/candies.dat)
 add_executable(CandiesWithReorder dynamicprogramming/candieswithreorder.cpp dynamicprogramming/candies.dat)
 add_executable(TheCoinChangeProblem dynamicprogramming/thecoinchangeproblem.cpp dynamicprogramming/thecoinchangeproblem.dat)
+add_executable(NikitaAndTheGame dynamicprogramming/nikitaandthegame.cpp dynamicprogramming/nikitaandthegame.dat)
+add_executable(MandragoraForest dynamicprogramming/mandragoraforest.cpp dynamicprogramming/mandragoraforest.dat)
 
 add_executable(2DArrayDS datastructures/arrays/2DArrayDS.cpp datastructures/arrays/2DArrayDS.dat)
 add_executable(SparseArrays datastructures/arrays/sparsearrays.cpp datastructures/arrays/sparsearrays.dat)
