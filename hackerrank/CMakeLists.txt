@@ -35,6 +35,7 @@ add_executable(CandiesWithReorder dynamicprogramming/candieswithreorder.cpp dyna
 add_executable(TheCoinChangeProblem dynamicprogramming/thecoinchangeproblem.cpp dynamicprogramming/thecoinchangeproblem.dat)
 add_executable(NikitaAndTheGame dynamicprogramming/nikitaandthegame.cpp dynamicprogramming/nikitaandthegame.dat)
 add_executable(MandragoraForest dynamicprogramming/mandragoraforest.cpp dynamicprogramming/mandragoraforest.dat)
+add_executable(RedJohnIsBack dynamicprogramming/redjohnisback.cpp dynamicprogramming/redjohnisback.dat utils/utils.h)
 
 add_executable(2DArrayDS datastructures/arrays/2DArrayDS.cpp datastructures/arrays/2DArrayDS.dat)
 add_executable(SparseArrays datastructures/arrays/sparsearrays.cpp datastructures/arrays/sparsearrays.dat)
