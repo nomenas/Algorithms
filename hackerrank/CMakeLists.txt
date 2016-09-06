@@ -23,6 +23,9 @@ add_executable(CavityMap implementation/cavitymap.cpp implementation/cavitymap.d
 add_executable(CaesarCipher implementation/caesarcipher.cpp implementation/caesarcipher.dat)
 add_executable(NonDivisibleSubset implementation/nondivisiblesubset.cpp implementation/nondivisiblesubset.dat)
 add_executable(JumpingOnTheClouds implementation/jumpingontheclouds.cpp implementation/jumpingontheclouds.dat)
+add_executable(BiggerIsGreater implementation/biggerisgreater.cpp implementation/biggerisgreater.dat)
+add_executable(SaveThePrisoner implementation/savetheprisoner.cpp implementation/savetheprisoner.dat)
+add_executable(StrangeCounter implementation/strangecounter.cpp implementation/strangecounter.dat)
 
 add_executable(BinarySearch sorting/binarysearch.cpp sorting/binarysearch.dat)
 
