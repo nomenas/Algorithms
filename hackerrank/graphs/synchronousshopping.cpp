@@ -79,53 +79,6 @@ int main()
         graph[y - 1].emplace(x - 1, z);
     }
 
-    // optimize, remove out of stock markets
-    std::queue<std::pair<short, short>> notOptimizedEdges;
-    for (int i = 0; i < N; ++i)
-    {
-        for (auto route : graph[i])
-        {
-            if (marketStock[route.first] == 0)
-            {
-                notOptimizedEdges.push(std::make_pair(i, route.first));
-            }
-        }
-    }
-
-    while (!notOptimizedEdges.empty())
-    {
-        auto route = notOptimizedEdges.front();
-        notOptimizedEdges.pop();
-        static int counter = 0;
-        std::cout << counter++ << " " << route.first << " " << route.second << std::endl;
-
-        auto edge = graph[route.first].find(route.second);
-        if (graph[route.first].end() == edge) continue;
-        const auto distanceUntilHere = edge->second;
-        graph[route.first].erase(route.second);
-
-        for (auto destNextStepEdge : graph[route.second])
-        {
-            if (destNextStepEdge.first == route.first) continue;
-
-            unsigned long newRouteDistance = distanceUntilHere + destNextStepEdge.second;
-            auto iter = graph[route.first].find(destNextStepEdge.first);
-            if (iter == graph[route.first].end())
-            {
-                graph[route.first].emplace(destNextStepEdge.first, newRouteDistance);
-            }
-            else
-            {
-                iter->second = std::min(iter->second, newRouteDistance);
-            }
-
-            if (marketStock[destNextStepEdge.first] == 0)
-            {
-                notOptimizedEdges.push(std::make_pair(route.first, destNextStepEdge.first));
-            }
-        }
-    }
-
     // nodeId<collectedFishTypes, pathPassed>
     std::vector<std::unordered_map<unsigned short, unsigned long>> path;
     path.resize(N);
