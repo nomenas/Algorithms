@@ -26,10 +26,12 @@ add_executable(JumpingOnTheClouds implementation/jumpingontheclouds.cpp implemen
 add_executable(BiggerIsGreater implementation/biggerisgreater.cpp implementation/biggerisgreater.dat)
 add_executable(SaveThePrisoner implementation/savetheprisoner.cpp implementation/savetheprisoner.dat)
 add_executable(StrangeCounter implementation/strangecounter.cpp implementation/strangecounter.dat)
+add_executable(RepeatedString implementation/repeatedstring.cpp implementation/repeatedstring.dat)
 
 add_executable(BinarySearch sorting/binarysearch.cpp sorting/binarysearch.dat)
 
 add_executable(ShortestReach graphs/shortestreach.cpp graphs/shortestreach.dat utils/heap.h)
+add_executable(SynchronousShopping graphs/synchronousshopping.cpp graphs/synchronousshopping.dat)
 
 add_executable(FibornacciModified dynamicprogramming/fibonaccimodified.cpp dynamicprogramming/fibonaccimodified.dat utils/ostream.h utils/xlong.h)
 add_executable(TheMaximumSubarray dynamicprogramming/themaximumsubarray.cpp dynamicprogramming/themaximumsubarray.dat)
