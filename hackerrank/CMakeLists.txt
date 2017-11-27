@@ -42,6 +42,7 @@ add_executable(NikitaAndTheGame dynamicprogramming/nikitaandthegame.cpp dynamicp
 add_executable(MandragoraForest dynamicprogramming/mandragoraforest.cpp dynamicprogramming/mandragoraforest.dat)
 add_executable(RedJohnIsBack dynamicprogramming/redjohnisback.cpp dynamicprogramming/redjohnisback.dat utils/utils.h)
 
+add_executable(ArrayManipulation datastructures/arrays/ArrayManipulation.cpp)
 add_executable(2DArrayDS datastructures/arrays/2DArrayDS.cpp datastructures/arrays/2DArrayDS.dat)
 add_executable(SparseArrays datastructures/arrays/sparsearrays.cpp datastructures/arrays/sparsearrays.dat)
 add_executable (DynamicArray datastructures/arrays/dynamicarray.cpp datastructures/arrays/dynamicarray.dat)
